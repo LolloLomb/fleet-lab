@@ -1,0 +1,10 @@
+apiVersion: fleet.cattle.io/v1alpha1
+kind: GitRepo
+metadata:
+  name: envoy-ai-gateway-crd
+  namespace: fleet-local
+spec:
+  repo: https://github.com/LolloLomb/fleet-lab.git
+  branch: main
+  paths:
+    - envoy-ai-gateway-crd
