@@ -3,4 +3,7 @@ helm:
   chart: vaultwarden
   version: 0.46.*
 
+  valuesFiles:
+  - values.yaml
+
 defaultNamespace: vaultwarden
