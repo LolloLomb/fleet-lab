@@ -1,10 +1,10 @@
 apiVersion: fleet.cattle.io/v1alpha1
 kind: GitRepo
 metadata:
-  name: vaultwarden
+  name: envoy-gateway
   namespace: fleet-local
 spec:
   repo: https://github.com/LolloLomb/fleet-lab.git
   branch: main
   paths:
-    - vaultwarden
+    - envoy-gateway

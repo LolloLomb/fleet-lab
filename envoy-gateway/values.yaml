@@ -1,0 +1,6 @@
+hpa:
+  enabled: true
+  minReplicas: 1
+  maxReplicas: 2
+
+createNamespace: true

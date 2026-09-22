@@ -1,0 +1,9 @@
+helm:
+  repo: https://github.com/envoyproxy/gateway
+  chart: gateway-helm
+  version: 1.9.*
+
+  valuesFiles:
+  - values.yaml
+
+defaultNamespace: envoy-gateway
