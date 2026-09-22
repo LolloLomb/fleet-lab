@@ -1,0 +1,8 @@
+helm:
+  repo: "https://cloudnative-pg.io/charts/"
+  version: 0.29.*
+
+  valuesFiles:
+    - values.yaml
+
+defaultNamespace: cloudnative-pg
