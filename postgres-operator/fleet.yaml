@@ -1,5 +1,6 @@
 helm:
-  repo: "https://cloudnative-pg.io/charts/cloudnative-pg"
+  repo: "https://cloudnative-pg.github.io/charts"
+  chart: cloudnative-pg
   version: 0.29.*
 
   valuesFiles:
