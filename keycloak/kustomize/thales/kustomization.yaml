@@ -5,8 +5,8 @@ resources:
   - ../base
   - pvc/postgres-pvc.yaml
 
-generators:
-  - secrets-generator.yaml
+# generators:
+# - secrets-generator.yaml
 
 patches:
   - path: workload/postgres-deployment.yaml
