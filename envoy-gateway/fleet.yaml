@@ -1,5 +1,5 @@
 helm:
-  repo: https://github.com/envoyproxy/gateway
+  repo: https://gateway.envoyproxy.io/charts
   chart: gateway-helm
   version: 1.9.*
 
