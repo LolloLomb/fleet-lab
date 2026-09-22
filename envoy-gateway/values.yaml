@@ -22,7 +22,7 @@ config:
               includeAll: true
       service:
         fqdn:
-          hostname: ai-gateway-controller.envoy-ai-gateway-system.svc.cluster.local
+          hostname: ai-gateway-controller.envoy-ai-gateway-system.svc.cluster.local # riferimenti dell'agent router / envoy ai gateway
           port: 1063
     gateway:
       controllerName: gateway.envoyproxy.io/gatewayclass-controller
