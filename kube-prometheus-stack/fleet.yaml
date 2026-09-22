@@ -1,0 +1,7 @@
+helm:
+  repo: "oci://ghcr.io/prometheus-community/charts/kube-prometheus-stack"
+
+  valuesFiles:
+  - values.yaml
+
+defaultNamespace: kube-prometheus-stack
