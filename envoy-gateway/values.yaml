@@ -1,6 +1,53 @@
-hpa:
-  enabled: true
-  minReplicas: 1
-  maxReplicas: 2
-
-createNamespace: true
+apiVersion: v1
+config:
+  envoyGateway:
+    extensionApis:
+      enableBackend: true
+      enableEnvoyPatchPolicy: true
+    extensionManager:
+      hooks:
+        xdsTranslator:
+          post:
+            - Translation
+            - Cluster
+            - Route
+          translation:
+            cluster:
+              includeAll: true
+            listener:
+              includeAll: true
+            route:
+              includeAll: true
+            secret:
+              includeAll: true
+      service:
+        fqdn:
+          hostname: ai-gateway-controller.envoy-ai-gateway-system.svc.cluster.local
+          port: 1063
+    gateway:
+      controllerName: gateway.envoyproxy.io/gatewayclass-controller
+    logging:
+      level:
+        default: info
+    provider:
+      kubernetes:
+        rateLimitDeployment:
+          patch:
+            type: StrategicMerge
+            value:
+              spec:
+                template:
+                  spec:
+                    containers:
+                      - image: docker.io/envoyproxy/ratelimit:60d8e81b
+                        imagePullPolicy: IfNotPresent
+                        name: envoy-ratelimit
+      type: Kubernetes
+    rateLimit:
+      backend:
+        redis:
+          url: redis.redis-system.svc.cluster.local:6379 # stesso nome del service e del namespace definiti in envoy-gateway-redis
+        type: Redis
+kind: Namespace
+metadata:
+  name: redis-system # lo stesso indicato da envoy-gateway-redis
