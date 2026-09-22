@@ -1,0 +1,8 @@
+helm:
+  repo: "https://helm.openwebui.com"
+  version: 16.6.*
+
+  valuesFiles:
+  - values.yaml
+
+defaultNamespace: openwebui

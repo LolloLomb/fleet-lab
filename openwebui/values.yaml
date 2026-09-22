@@ -1,0 +1,4 @@
+namespaceOverride: "openwebui"
+extraEnvFrom:
+  - secretRef:
+      name: open-webui-env
