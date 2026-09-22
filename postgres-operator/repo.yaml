@@ -4,7 +4,7 @@ metadata:
   name: cloudnative-pg
   namespace: fleet-local
 spec:
-  repo: "https://github.com/LolloLomb/fleet-lab"
+  repo: ""
   branch: main
   paths:
     - postgres-operator

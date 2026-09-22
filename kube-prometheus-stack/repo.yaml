@@ -4,7 +4,7 @@ metadata:
   name: kube-prometheus-stack
   namespace: fleet-local
 spec:
-  repo: "https://github.com/LolloLomb/fleet-lab"
+  repo: ""
   branch: main
   paths:
     - kube-prometheus-stack
