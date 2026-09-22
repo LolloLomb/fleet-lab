@@ -4,7 +4,7 @@ metadata:
   name: vaultwarden
   namespace: fleet-local
 spec:
-  repo: https://github.com/TUO-USER/fleet-lab.git
+  repo: https://github.com/LolloLomb/fleet-lab.git
   branch: main
   paths:
     - vaultwarden
