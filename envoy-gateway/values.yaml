@@ -1,4 +1,22 @@
 apiVersion: v1
+certgen:
+  job:
+    nodeSelector:
+      node-type: baremetal
+    tolerations:
+      - key: node/gaia
+        operator: Equal
+        value: "true"
+        effect: NoSchedule
+deployment:
+  job:
+    nodeSelector:
+      node-type: baremetal
+    tolerations:
+      - key: node/gaia
+        operator: Equal
+        value: "true"
+        effect: NoSchedule
 config:
   envoyGateway:
     extensionApis:

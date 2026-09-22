@@ -4,7 +4,7 @@ metadata:
   name: openwebui
   namespace: fleet-local
 spec:
-  repo: https://github.com/LolloLomb/fleet-lab.git
+  repo: ""
   branch: main
   paths:
     - openwebui

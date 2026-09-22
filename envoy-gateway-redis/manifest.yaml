@@ -24,6 +24,13 @@ metadata:
   namespace: redis-system
 spec:
   replicas: 1
+  nodeSelector:
+    node-type: baremetal
+  tolerations:
+    - key: node/gaia
+      operator: "Equal"
+      value: "true"
+      effect: "NoSchedule"
   selector:
     matchLabels:
       app: redis

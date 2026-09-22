@@ -1,0 +1,5 @@
+*.env
+*.dockerconfigjson
+*.json
+secrets.yaml
+!test.env

@@ -1,0 +1,4 @@
+kustomize:
+  dir: kustomize/thales
+
+defaultNamespace: keycloak

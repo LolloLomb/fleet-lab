@@ -1,0 +1,27 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+secretGenerator:
+#  - name: keycloak-secret
+#    options:
+#      disableNameSuffixHash: true
+#    envs:
+#      - keycloak.env
+#
+#  - name: postgres-secret
+#    options:
+#      disableNameSuffixHash: true
+#    envs:
+#      - postgres.env
+
+  - name: keycloak-secret-dist
+    options:
+      disableNameSuffixHash: true
+    envs:
+      - keycloak.env.dist
+
+  - name: postgres-secret-dist
+    options:
+      disableNameSuffixHash: true
+    envs:
+      - postgres.env.dist

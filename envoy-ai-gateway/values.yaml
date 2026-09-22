@@ -1,0 +1,8 @@
+controller:
+  nodeSelector:
+      node-type: baremetal
+  tolerations:
+    - key: node/gaia
+      operator: Equal
+      value: "true"
+      effect: NoSchedule
