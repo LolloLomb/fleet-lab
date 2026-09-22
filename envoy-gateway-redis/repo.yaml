@@ -1,0 +1,10 @@
+apiVersion: fleet.cattle.io/v1alpha1
+kind: GitRepo
+metadata:
+  name: redis-system
+  namespace: redis-system
+spec:
+  repo: https://github.com/LolloLomb/fleet-lab.git
+  branch: main
+  paths:
+    - redis-system
