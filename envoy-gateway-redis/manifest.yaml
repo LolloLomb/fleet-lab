@@ -28,17 +28,17 @@ spec:
     matchLabels:
       app: redis
   template:
-    nodeSelector:
-      node-type: baremetal
-    tolerations:
-      - key: node/gaia
-        operator: "Equal"
-        value: "true"
-        effect: "NoSchedule"
     metadata:
       labels:
         app: redis
     spec:
+      nodeSelector:
+        node-type: baremetal
+      tolerations:
+        - key: node/gaia
+          operator: "Equal"
+          value: "true"
+          effect: "NoSchedule"
       containers:
         - image: redis:8.2.4-alpine3.22
           imagePullPolicy: IfNotPresent
