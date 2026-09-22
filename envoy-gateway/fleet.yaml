@@ -1,0 +1,6 @@
+helm:
+  repo: https://guerzon.github.io/vaultwarden
+  chart: vaultwarden
+  version: 0.46.*
+
+defaultNamespace: vaultwarden

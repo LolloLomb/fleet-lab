@@ -1,0 +1,10 @@
+apiVersion: fleet.cattle.io/v1alpha1
+kind: GitRepo
+metadata:
+  name: vaultwarden
+  namespace: fleet-local
+spec:
+  repo: https://github.com/TUO-USER/fleet-lab.git
+  branch: main
+  paths:
+    - vaultwarden
