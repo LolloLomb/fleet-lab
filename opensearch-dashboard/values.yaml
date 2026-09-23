@@ -7,31 +7,37 @@
 #  node-type: baremetal
 replicaCount: 1
 
-opensearchHosts: "https://opensearch-cluster-master:9200"
+opensearchHosts: "http://opensearch-cluster-master:9200"
 
-opensearchAccount:
-  secret: opensearch-dashboards-account
+resources:
+  requests:
+    cpu: "500m"
+    memory: "1Gi"
+  limits:
+    cpu: "1"
+    memory: "1Gi"
 
 service:
   type: ClusterIP
 
 config:
-  opensearch_dashboards.yml:
+  opensearch_dashboards.yml: |
     server.host: "0.0.0.0"
     server.port: 5601
 
     opensearch.hosts:
-      - "https://opensearch-cluster-master:9200"
+      - "http://opensearch-cluster-master:9200"
 
-    opensearch.ssl.verificationMode: "none"
+    opensearch.ssl.verificationMode: none
 
-    opensearch_security.cookie.secure: false
+    opensearch.username: "admin"
+    opensearch.password: "LA_TUA_PASSWORD"
+
+    opensearch.requestHeadersWhitelist:
+      - authorization
+      - securitytenant
 
     opensearch_security.multitenancy.enabled: true
     opensearch_security.multitenancy.tenants.preferred:
-      - "Private"
-      - "Global"
-
-    opensearch.requestHeadersWhitelist:
-      - "authorization"
-      - "securitytenant"
+      - Private
+      - Global
