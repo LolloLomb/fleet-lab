@@ -1,0 +1,8 @@
+helm:
+  repo: "https://helm.elastic.co"
+  chart: kibana
+
+  valuesFiles:
+  - values.yaml
+
+defaultNamespace: opensearch
