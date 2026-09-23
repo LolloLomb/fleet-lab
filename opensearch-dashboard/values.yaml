@@ -17,7 +17,21 @@ service:
 
 config:
   opensearch_dashboards.yml:
-    opensearch.ssl.verificationMode: none # cambiare
-    opensearch_security.multitenancy.enabled: true
-    opensearch_security.multitenancy.tenants.preferred: Private
     server.host: "0.0.0.0"
+    server.port: 5601
+
+    opensearch.hosts:
+      - "https://opensearch-cluster-master:9200"
+
+    opensearch.ssl.verificationMode: "none"
+
+    opensearch_security.cookie.secure: false
+
+    opensearch_security.multitenancy.enabled: true
+    opensearch_security.multitenancy.tenants.preferred:
+      - "Private"
+      - "Global"
+
+    opensearch.requestHeadersWhitelist:
+      - "authorization"
+      - "securitytenant"
