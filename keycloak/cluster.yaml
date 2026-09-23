@@ -3,47 +3,37 @@
 apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
-  name: cluster-with-metrics
-  namespace: cloudnative-pg
+  name: keycloak-db
+  namespace: keycloak
 spec:
   bootstrap:
     initdb:
-      database: nometest
-      owner: nometestuser
+      database: keycloak
+      owner: keycloak
       secret:
-        name: credentials
+        name: keycloak-db-credentials
   enableSuperuserAccess: false
-  instances: 3
+  instances: 1
 #  affinity:
 #    enablePodAntiAffinity: true
 #    topologyKey: kubernetes.io/hostname
 #    podAntiAffinityType: required
   imageCatalogRef:
     apiGroup: postgresql.cnpg.io
-    kind: ImageCatalog
+    kind: ClusterImageCatalog
     name: postgresql
     major: 18
   storage:
     size: 1Gi
 ---
-apiVersion: v1
-kind: Secret
-metadata:
-  name: credentials
-  namespace: cloudnative-pg
-type: kubernetes.io/basic-auth
-stringData:
-  username: nometestuser
-  password: nometestpass
----
 apiVersion: monitoring.coreos.com/v1
 kind: PodMonitor
 metadata:
-  name: cluster-with-metrics
-  namespace: cloudnative-pg
+  name: keycloak-db
+  namespace: keycloak
 spec:
   selector:
     matchLabels:
-      cnpg.io/cluster: cluster-with-metrics
+      cnpg.io/cluster: keycloak-db
   podMetricsEndpoints:
   - port: metrics
