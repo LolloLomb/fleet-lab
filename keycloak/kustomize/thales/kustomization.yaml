@@ -14,34 +14,34 @@ patches:
     target:
       kind: StatefulSet
       labelSelector: app=keycloak
-  - patch: |-
-      - op: add
-        path: /spec/template/spec/tolerations
-        value:
-          - key: "node/gaia"
-            operator: "Equal"
-            value: "true"
-            effect: "NoSchedule"
-      - op: add
-        path: /spec/template/spec/nodeSelector
-        value:
-          node-type: baremetal
-    target:
-      kind: Deployment
-  - patch: |-
-      - op: add
-        path: /spec/template/spec/tolerations
-        value:
-          - key: "node/gaia"
-            operator: "Equal"
-            value: "true"
-            effect: "NoSchedule"
-      - op: add
-        path: /spec/template/spec/nodeSelector
-        value:
-          node-type: baremetal
-    target:
-      kind: StatefulSet
+#  - patch: |-
+#      - op: add
+#        path: /spec/template/spec/tolerations
+#        value:
+#          - key: "node/gaia"
+#            operator: "Equal"
+#            value: "true"
+#            effect: "NoSchedule"
+#      - op: add
+#        path: /spec/template/spec/nodeSelector
+#        value:
+#          node-type: baremetal
+#    target:
+#      kind: Deployment
+#  - patch: |-
+#      - op: add
+#        path: /spec/template/spec/tolerations
+#        value:
+#          - key: "node/gaia"
+#            operator: "Equal"
+#            value: "true"
+#            effect: "NoSchedule"
+#      - op: add
+#        path: /spec/template/spec/nodeSelector
+#        value:
+#          node-type: baremetal
+#    target:
+#      kind: StatefulSet
 
 images:
   - name: keycloak
