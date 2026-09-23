@@ -1,0 +1,38 @@
+#tolerations:
+#  - key: node/gaia
+#    operator: Equal
+#    value: "true"
+#    effect: NoSchedule
+#nodeSelector:
+#  node-type: baremetal
+clusterName: opensearch-local
+
+nodeGroup: master
+
+singleNode: true
+
+replicas: 1
+
+roles:
+  - master
+  - ingest
+  - data
+  - remote_cluster_client
+
+opensearchJavaOpts: "-Xms1g -Xmx1g"
+
+persistence:
+  enabled: true
+  size: 1Gi
+
+protocol: https
+
+service:
+  type: ClusterIP
+
+securityConfig:
+  enabled: true
+
+extraEnvs:
+  - name: OPENSEARCH_INITIAL_ADMIN_PASSWORD
+    value: "AdminPassword123!"

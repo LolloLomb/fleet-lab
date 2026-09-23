@@ -1,0 +1,8 @@
+helm:
+  repo: "https://opensearch-project.github.io/helm-charts"
+  chart: opensearch
+
+  valuesFiles:
+  - values.yaml
+
+defaultNamespace: opensearch
