@@ -5,4 +5,4 @@ helm:
   valuesFiles:
   - values.yaml
 
-defaultNamespace: kube-prometheus-stack
+defaultNamespace: valkey
