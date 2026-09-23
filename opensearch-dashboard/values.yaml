@@ -31,7 +31,7 @@ config:
     opensearch.ssl.verificationMode: none
 
     opensearch.username: "admin"
-    opensearch.password: "V7!qR2#zLm9@Kp4"
+    opensearch.password: "LA_TUA_PASSWORD"
 
     opensearch.requestHeadersWhitelist:
       - authorization
