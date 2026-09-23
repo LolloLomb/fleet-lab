@@ -1,9 +1,9 @@
 config:
   secret: true
-tolerations:
-  - key: node/gaia
-    operator: Equal
-    value: "true"
-    effect: NoSchedule
-nodeSelector:
-  node-type: baremetal
+#tolerations:
+#  - key: node/gaia
+#    operator: Equal
+#    value: "true"
+#    effect: NoSchedule
+#nodeSelector:
+#  node-type: baremetal
