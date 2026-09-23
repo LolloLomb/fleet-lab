@@ -1,13 +1,53 @@
+### Il backup si gestisce tramite plugin esterni
+apiVersion: postgresql.cnpg.io/v1
+kind: ImageCatalog
+metadata:
+  name: postgresql
+  namespace: default
+spec:
+  images:
+    - major: 15
+      image: ghcr.io/cloudnative-pg/postgresql:15.14-system-trixie
+    - major: 16
+      image: ghcr.io/cloudnative-pg/postgresql:16.10-system-trixie
+    - major: 17
+      image: ghcr.io/cloudnative-pg/postgresql:17.6-system-trixie
+    - major: 18
+      image: ghcr.io/cloudnative-pg/postgresql:18.6-system-trixie
+---
 apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
   name: cluster-with-metrics
 spec:
+  bootstrap:
+    initdb:
+      database: nometest
+      owner: nometestuser
+      secret:
+        name: credentials
+  enableSuperuserAccess: false
   instances: 3
-  imageName: ghcr.io/cloudnative-pg/postgresql:18
-
+#  affinity:
+#    enablePodAntiAffinity: true
+#    topologyKey: kubernetes.io/hostname
+#    podAntiAffinityType: required
+  imageCatalogRef:
+    apiGroup: postgresql.cnpg.io
+    kind: ImageCatalog
+    name: postgresql
+    major: 18
   storage:
     size: 1Gi
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: credentials
+type: kubernetes.io/basic-auth
+stringData:
+  username: nometestuser
+  password: nometestpass
 ---
 apiVersion: monitoring.coreos.com/v1
 kind: PodMonitor
