@@ -7,6 +7,6 @@ database:
   host: "postgres.keycloak.svc.cluster.local"
   existingSecret: "keycloak-db-credentials"
   secretKeys:
-    passwordKey: "db-password"
-    usernameKey: "db-username"
+    passwordKey: "password"
+    usernameKey: "username"
 ### aggiungere nodeSelector e tolerations

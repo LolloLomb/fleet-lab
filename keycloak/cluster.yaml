@@ -4,6 +4,7 @@ apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
   name: keycloak-db
+  namespace: keycloak
 spec:
   bootstrap:
     initdb:
@@ -19,7 +20,7 @@ spec:
 #    podAntiAffinityType: required
   imageCatalogRef:
     apiGroup: postgresql.cnpg.io
-    kind: ImageCatalog
+    kind: ClusterImageCatalog
     name: postgresql
     major: 18
   storage:
@@ -29,6 +30,7 @@ apiVersion: monitoring.coreos.com/v1
 kind: PodMonitor
 metadata:
   name: keycloak-db
+  namespace: keycloak
 spec:
   selector:
     matchLabels:
