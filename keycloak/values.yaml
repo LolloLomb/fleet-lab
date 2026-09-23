@@ -1,0 +1,12 @@
+metrics:
+  enabled: true
+postgres:
+  enabled: false
+database:
+  type: "postgres"
+  host: "postgres.keycloak.svc.cluster.local"
+  existingSecret: "keycloak-db-credentials"
+  secretKeys:
+    passwordKey: "db-password"
+    usernameKey: "db-username"
+### aggiungere nodeSelector e tolerations
