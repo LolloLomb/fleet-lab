@@ -1,4 +1,5 @@
 ### Il backup si gestisce tramite plugin esterni
+### Tolerations e nodeSelector vanno applicati sulle risorse oppure tramite patch oppure tramite una struttura kustomization + overlay
 apiVersion: postgresql.cnpg.io/v1
 kind: ImageCatalog
 metadata:
