@@ -16,5 +16,6 @@ replica:
   enabled: true
   replicas: 2
   replicationUser: default
-persistence:
-  size: 1Gi
+  persistence:
+    size: 1Gi
+
