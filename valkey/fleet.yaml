@@ -1,6 +1,6 @@
 helm:
   repo: "https://valkey.io/valkey-helm"
-  chart: "valkey/valkey"
+  chart: valkey
 
   valuesFiles:
   - values.yaml
