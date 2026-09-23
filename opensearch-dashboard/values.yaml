@@ -7,7 +7,7 @@
 #  node-type: baremetal
 replicaCount: 1
 
-opensearchHosts: "http://opensearch-cluster-master:9200"
+opensearchHosts: "https://opensearch-cluster-master:9200"
 
 resources:
   requests:
@@ -26,7 +26,7 @@ config:
     server.port: 5601
 
     opensearch.hosts:
-      - "http://opensearch-cluster-master:9200"
+      - "https://opensearch-cluster-master:9200"
 
     opensearch.ssl.verificationMode: none
 
