@@ -1,10 +1,10 @@
 apiVersion: fleet.cattle.io/v1alpha1
 kind: GitRepo
 metadata:
-  name: keycloak
+  name: valkey
   namespace: fleet-local
 spec:
   repo: "https://github.com/LolloLomb/fleet-lab"
   branch: main
   paths:
-    - keycloak
+    - valkey

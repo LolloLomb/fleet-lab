@@ -1,0 +1,8 @@
+helm:
+  repo: "https://valkey.io/valkey-helm"
+  chart: "valkey/valkey"
+
+  valuesFiles:
+  - values.yaml
+
+defaultNamespace: kube-prometheus-stack
