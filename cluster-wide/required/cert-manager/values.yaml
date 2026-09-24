@@ -1,0 +1,9 @@
+installCRDs: true
+tolerations:
+  - key: node/gaia
+    operator: Equal
+    value: "true"
+    effect: NoSchedule
+global:
+  nodeSelector:
+    node-type: baremetal

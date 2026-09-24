@@ -1,0 +1,8 @@
+helm:
+  repo: "https://charts.jetstack.io"
+  chart: cert-manager
+
+  valuesFiles:
+    - values.yaml
+
+defaultNamespace: cert-manager
