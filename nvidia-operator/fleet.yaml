@@ -1,0 +1,9 @@
+helm:
+  repo: "https://helm.ngc.nvidia.com/nvidia"
+  chart: nvidia-operator
+  version: 26.7.*
+
+  valuesFiles:
+  - values.yaml
+
+defaultNamespace: nvidia-operator

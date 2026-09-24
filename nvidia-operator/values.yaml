@@ -1,0 +1,16 @@
+daemonsets:
+  tolerations:
+    - key: node/gaia
+      operator: Equal
+      value: "true"
+      effect: NoSchedule
+  nodeSelector:
+    node-type: baremetal
+operator:
+  tolerations:
+    - key: node/gaia
+      operator: Equal
+      value: "true"
+      effect: NoSchedule
+  nodeSelector:
+    node-type: baremetal
