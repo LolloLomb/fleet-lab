@@ -1,10 +1,10 @@
 apiVersion: fleet.cattle.io/v1alpha1
 kind: GitRepo
 metadata:
-  name: valkey
+  name: valkey-operator
   namespace: fleet-local
 spec:
   repo: ""
   branch: main
   paths:
-    - valkey
+    - valkey-operator

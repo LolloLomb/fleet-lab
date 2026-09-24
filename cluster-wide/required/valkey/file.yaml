@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: Secret
-metadata:
-  name: valkey-auth
-  namespace: valkey
-type: Opaque
-stringData:
-  password: "una-password-forte"

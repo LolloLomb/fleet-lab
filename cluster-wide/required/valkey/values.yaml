@@ -5,17 +5,3 @@
 #    effect: NoSchedule
 #nodeSelector:
 #  node-type: baremetal
-auth:
-  enabled: true
-  usersExistingSecret: valkey-auth
-  aclUsers:
-    default:
-      permissions: "~* &* +@all"
-      passwordKey: password
-replica:
-  enabled: true
-  replicas: 2
-  replicationUser: default
-  persistence:
-    size: 1Gi
-

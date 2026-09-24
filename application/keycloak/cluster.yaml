@@ -1,11 +1,17 @@
 ### Il backup si gestisce tramite plugin esterni
-### Tolerations e nodeSelector vanno applicati sulle risorse oppure tramite patch oppure tramite una struttura kustomization + overlay
 apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
   name: keycloak-db
   namespace: keycloak
 spec:
+  tolerations:
+    - key: node/gaia
+      operator: Equal
+      value: "true"
+      effect: NoSchedule
+  nodeSelector:
+    node-type: baremetal
   bootstrap:
     initdb:
       database: keycloak
