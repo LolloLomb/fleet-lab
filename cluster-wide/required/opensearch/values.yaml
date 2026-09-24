@@ -1,0 +1,7 @@
+#tolerations:
+#  - key: node/gaia
+#    operator: Equal
+#    value: "true"
+#    effect: NoSchedule
+#nodeSelector:
+#  node-type: baremetal

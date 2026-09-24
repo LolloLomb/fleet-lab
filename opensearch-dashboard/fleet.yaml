@@ -1,8 +1,0 @@
-helm:
-  repo: "https://opensearch-project.github.io/helm-charts"
-  chart: opensearch-dashboards
-
-  valuesFiles:
-  - values.yaml
-
-defaultNamespace: opensearch

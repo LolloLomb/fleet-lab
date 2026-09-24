@@ -1,10 +1,10 @@
 apiVersion: fleet.cattle.io/v1alpha1
 kind: GitRepo
 metadata:
-  name: opensearch-dashboard
+  name: opensearch-operator
   namespace: fleet-local
 spec:
   repo: ""
   branch: main
   paths:
-    - opensearch-dashboard
+    - opensearch
